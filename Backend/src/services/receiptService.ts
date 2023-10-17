@@ -43,7 +43,7 @@ const receiptService = {
       creditAccountId
     ])
 
-    return result.rows[0]
+    console.log(result)
   }
 }
 

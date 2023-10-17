@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
+import { DatabaseError } from 'pg'
 
 const errorHandler = (
   err: any,
@@ -8,7 +9,12 @@ const errorHandler = (
 ) => {
   console.log(err)
 
-  if (err) return res.status(404).json({ error: err.message })
+  if (err) {
+    if (err instanceof DatabaseError) {
+      return res.status(422).json({ error: err.detail })
+    }
+    return res.status(400).json({ error: err.message })
+  }
 }
 
 export default errorHandler
