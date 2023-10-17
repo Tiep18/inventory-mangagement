@@ -7,42 +7,42 @@ const receiptValidation = validate(
     deliverId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'deliverId is not a number'
+        errorMessage: 'deliverId invalid'
       },
       errorMessage: 'deliverId is required'
     },
     warehouseId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'warehouseId is not a number'
+        errorMessage: 'warehouseId invalid'
       },
       errorMessage: 'warehouseId is required'
     },
     documenterId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'documenterId is not a number'
+        errorMessage: 'documenterId invalid'
       },
       errorMessage: 'documenterId is required'
     },
     headOfAccountingId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'headOfAccountingId is not a number'
+        errorMessage: 'headOfAccountingId invalid'
       },
       errorMessage: 'headOfAccountingId is required'
     },
     warehouseKeeperId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'warehouseKeeperId is not a number'
+        errorMessage: 'warehouseKeeperId invalid'
       },
       errorMessage: 'warehouseKeeperId is required'
     },
     total: {
       notEmpty: true,
       isNumeric: {
-        errorMessage: 'total is not a number'
+        errorMessage: 'total invalid'
       },
       errorMessage: 'total is required'
     },
@@ -63,14 +63,14 @@ const receiptValidation = validate(
     debitAccountId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'debitAccountId is not a number'
+        errorMessage: 'debitAccountId invalid'
       },
       errorMessage: 'debitAccountId is required'
     },
     creditAccountId: {
       notEmpty: true,
       isInt: {
-        errorMessage: 'creditAccountId is not a number'
+        errorMessage: 'creditAccountId invalid'
       },
       errorMessage: 'creditAccountId is required'
     },
