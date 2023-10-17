@@ -1,6 +1,7 @@
 import express from 'express'
 import receiptRouter from './routes/receipt.route'
 import itemListRouter from './routes/itemList.route'
+import accountingAccountRouter from './routes/accountingAccount.route'
 import itemsInReceiptRouter from './routes/itemsInReceipt.route'
 import errorHandler from './middlewares/errorHandler'
 
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/receipts', receiptRouter)
 app.use('/api/v1/items', itemListRouter)
+app.use('/api/v1/accounting-accounts', accountingAccountRouter)
 app.use('/api/v1/itemsreceipts', itemsInReceiptRouter)
 app.use(errorHandler)
 
