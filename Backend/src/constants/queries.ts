@@ -9,7 +9,9 @@ const queries = {
   GET_ITEM_BY_ID: 'SELECT * FROM "itemList" WHERE id = $1',
   GET_ALL_ACCOUNTING_ACCOUNT: 'SELECT * FROM "accountingAccounts"',
   GET_ACCOUNTING_ACCOUNT_BY_ID:
-    'SELECT * FROM "accountingAccounts" WHERE id = $1'
+    'SELECT * FROM "accountingAccounts" WHERE id = $1',
+  GET_ALL_EMPLOYEE: 'SELECT * FROM employees',
+  GET_EMPLOYEE_BY_ID: 'SELECT * FROM employees WHERE id = $1'
 }
 
 export default queries
