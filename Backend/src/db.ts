@@ -9,4 +9,6 @@ const pool = new Pool({
   connectionTimeoutMillis: 5000
 })
 
-export default pool
+export const query = (text: string, params?: any[]) => {
+  return pool.query(text, params)
+}

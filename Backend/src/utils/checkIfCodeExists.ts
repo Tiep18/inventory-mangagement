@@ -1,5 +1,5 @@
 import queries from '~/constants/queries'
-import pool from '~/db'
+import * as pool from '~/db'
 
 const checkIfCodeExists = async (code: number) => {
   const result = await pool.query(queries.GET_RECEIPT_BY_CODE, [code])

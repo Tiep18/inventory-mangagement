@@ -1,12 +1,10 @@
 import queries from '~/constants/queries'
-import pool from '~/db'
+import * as pool from '~/db'
 import ItemsInReceipt, { ItemsInReceiptBody } from '~/types/itemsInReceipt.type'
 
 const itemsInReceiptService = {
   getAll: async () => {
-    const result = await pool.query<ItemsInReceipt>(
-      queries.GET_ALL_ITEMS_IN_RECEIPT
-    )
+    const result = await pool.query(queries.GET_ALL_ITEMS_IN_RECEIPT)
     return result.rows
   },
 

@@ -1,14 +1,11 @@
 import { ParamsDictionary } from 'express-serve-static-core'
 import queries from '~/constants/queries'
-import pool from '~/db'
+import * as pool from '~/db'
 import AccountingAccount from '~/types/accountingAccount.type'
-import Item from '~/types/item.type'
 
 const accountingAccountService = {
   getAll: async () => {
-    const result = await pool.query<AccountingAccount>(
-      queries.GET_ALL_ACCOUNTING_ACCOUNT
-    )
+    const result = await pool.query(queries.GET_ALL_ACCOUNTING_ACCOUNT)
     return result.rows
   },
 

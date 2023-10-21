@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from 'express'
 import queries from '~/constants/queries'
-import pool from '~/db'
+import * as pool from '~/db'
 import Receipt, { ReceiptBody } from '~/types/receipt.type'
 import { ParamsDictionary } from 'express-serve-static-core'
 
 const receiptService = {
   getAll: async () => {
-    const result = await pool.query<Receipt>(queries.GET_ALL_RECEIPT)
+    const result = await pool.query(queries.GET_ALL_RECEIPT)
     return result.rows
   },
 
@@ -30,7 +30,7 @@ const receiptService = {
       warehouseId,
       warehouseKeeperId
     } = payload
-    const result = await pool.query<{ id: number }>(queries.INSERT_RECEIP, [
+    const result = await pool.query(queries.INSERT_RECEIP, [
       deliverId,
       warehouseId,
       documenterId,
@@ -43,7 +43,7 @@ const receiptService = {
       creditAccountId
     ])
 
-    console.log(result)
+    return result.rows[0]
   }
 }
 

@@ -1,12 +1,12 @@
 import { ParamsDictionary } from 'express-serve-static-core'
 import queries from '~/constants/queries'
-import pool from '~/db'
+import * as pool from '~/db'
 import Empployee from '~/types/employee.type'
 import Item from '~/types/item.type'
 
 const employeeService = {
   getAll: async () => {
-    const result = await pool.query<Empployee>(queries.GET_ALL_EMPLOYEE)
+    const result = await pool.query(queries.GET_ALL_EMPLOYEE)
     return result.rows
   },
 
