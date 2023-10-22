@@ -10,7 +10,7 @@ const receiptService = {
     return result.rows
   },
 
-  getReceiptByID: async (params: ParamsDictionary) => {
+  getReceiptById: async (params: ParamsDictionary) => {
     const { id } = params
     const result = await pool.query(queries.GET_RECEIPT_BY_ID, [id])
     console.log(result)
